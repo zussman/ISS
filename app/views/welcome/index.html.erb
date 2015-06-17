@@ -53,7 +53,7 @@ function moveISS () {
 }
 
 
-var map = handler = Gmaps.build('Google');
+handler = Gmaps.build('Google');
 var latitude = <%= @latitude || 0 %>;
 var longitude = <%= @longitude || 0 %>;
 handler.buildMap({
@@ -69,14 +69,13 @@ handler.buildMap({
     {
       "lat": latitude,
       "lng": longitude,
-      /*"picture": {
+      "picture": {
         "url": "http://icon.softwaresea.com/32x32/5/394/1196603.891ea57c45143d46f175d87e8951cfb8.gif",
         "width":  36,
         "height": 36,
-      },*/
+      },
       "infowindow": "hello!"
     },
   ]);
 });
-nite.init(map);
 </script>

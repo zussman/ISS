@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+
+.navbar {
+  z-index: 2;
+}
+
+.container-fluid {
+  z-index: 1;
+  position: relative;
+}
+
+.space {
+}
+
+#map { 
+  height: 100%; 
+  width: 100%; 
+  position:absolute; 
+  top: 50px; 
+  left: 0; 
+  z-index: 0; /* Set z-index to 0 as it will be on a layer below the contact form */
+}

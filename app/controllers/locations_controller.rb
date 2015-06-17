@@ -28,9 +28,10 @@ class LocationsController < ApplicationController
 
   def create
     @location = Location.create location_params
+    @location.user_id = current_user.id
 
     if @location.save
-      redirect_to @location
+      redirect_to @location, :notice => "Successfully created location."
     else
       render 'new'
     end

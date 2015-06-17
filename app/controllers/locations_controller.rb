@@ -1,4 +1,4 @@
-require 'HTTParty'
+require 'httparty'
 require 'will_paginate/array'
 
 class LocationsController < ApplicationController

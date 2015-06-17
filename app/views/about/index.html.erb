@@ -1,0 +1,149 @@
+<h1>About the ISS App</h1>
+
+<p>I made the ISS App because it's frickin' amazing that there's a satellite with people in it flying around the world at 17,000 mph conducting experiments to benefit mankind. There are a few apps out there that already track the ISS and alert you when it will be visible in the sky. Still, I want to try and create my own because it will give me a chance to learn a lot about Rails, the ISS, Google Maps APIs, how satellites move through orbit, and about cartography (much like Buster Bluth).</p>
+
+<h2>Associations</h2>
+
+<p>My app currently has some very simple associations. You can see them in the table below:</p>
+
+<table>
+<thead>
+<tr>
+<th>Table </th>
+<th> Attribute </th>
+<th> Field type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>users </td>
+<td> email     </td>
+<td> string</td>
+</tr>
+<tr>
+<td>users </td>
+<td> first_name </td>
+<td> string</td>
+</tr>
+<tr>
+<td>users </td>
+<td> last_name </td>
+<td> string</td>
+</tr>
+<tr>
+<td>phones </td>
+<td> phone_number </td>
+<td> string</td>
+</tr>
+<tr>
+<td>phones </td>
+<td> user_id </td>
+<td> integer</td>
+</tr>
+<tr>
+<td>locations </td>
+<td> location_name </td>
+<td> string</td>
+</tr>
+<tr>
+<td>locations </td>
+<td> address </td>
+<td> string</td>
+</tr>
+<tr>
+<td>locations </td>
+<td> latitude </td>
+<td> float</td>
+</tr>
+<tr>
+<td>locations </td>
+<td> longitude </td>
+<td> float</td>
+</tr>
+<tr>
+<td>locations </td>
+<td> user_id </td>
+<td> integer</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>I used Devise for authentication, so the rest of the Devise user fields are also there but I didn't show them because that would be boring.</p>
+
+<p>I only allowed one phone number per user, with the thought that I will eventually add a texting feature to the app. I wanted to limit to one phone, but if I need to in the future could change that relationship to allow multiple phones per user.</p>
+
+<p>Each user can track many locations and see future ISS passes for each location. That way, if you travel or have a buddy across the globe or just like picturing the ISS sailing over a distant land you can know exactly when that will happen.</p>
+
+<h2>Gems</h2>
+
+<p>I used a ton of gems, as follows:</p>
+
+<table>
+<thead>
+<tr>
+<th>Gem </th>
+<th> Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rubyracer, twitter-bootstrap-rails, less-rails </td>
+<td> For including Bootstrap in my application and styling</td>
+</tr>
+<tr>
+<td>haml </td>
+<td> Didn't end up sticking with haml, but played around with it and it's pretty cool.</td>
+</tr>
+<tr>
+<td>geocoder </td>
+<td> for getting location latitudes and longitudes when people input their address. Awesome gem very easy to use.</td>
+</tr>
+<tr>
+<td>simple_form </td>
+<td> for easier setup, validation, and organization of forms</td>
+</tr>
+<tr>
+<td>nested_form </td>
+<td> for nesting attributes. I liked it better than Cocoon because it wasn't so focused on Haml</td>
+</tr>
+<tr>
+<td>gmaps4rails </td>
+<td> for adding multiple markers to a google map</td>
+</tr>
+<tr>
+<td>Devise </td>
+<td> for authentication and user setup, validation, registration, edit, etc.</td>
+</tr>
+<tr>
+<td>country_select </td>
+<td> for selecting your country. Deleted this feature because I thought it would be easier for the user to just type in a one-line address than also select a country</td>
+</tr>
+<tr>
+<td>httparty </td>
+<td> great app for making HTTP/JSON requests in rails. I used this for getting the current location of the ISS and future passes for user locations</td>
+</tr>
+<tr>
+<td>will_paginate </td>
+<td> For pagination. Very intuitive</td>
+</tr>
+<tr>
+<td>twilio_ruby </td>
+<td> for texting users notifications of passes. Not working yet. But hopefully in a few weeks will be up and running.</td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>Thanks!</h2>
+
+<ul>
+<li>Andrei, Bill, Mikael, and Tim, and the rest of the GA team. You guys have been awesome to work with. I have learned a lot. It's going to make a big difference for me, for my company, etc.</li>
+<li>Bill Shupp of Wheretheissat? who's work has been a guideline for this project and made it a lot easier to figure out what's possible.</li>
+<li>NORAD for providing data on the ISS</li>
+<li>Open-Notify for providing that data in language that a luddite can understand.</li>
+<li>The rest of the class, for being super cool and not judging my neurosis too harshly.</li>
+</ul>
+
+
+<h2>Bronies</h2>

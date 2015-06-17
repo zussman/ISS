@@ -26,6 +26,14 @@
 .space {
 }
 
+.about {
+  background: url("http://i.imgur.com/PL5L2.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 #map { 
   height: 100%; 
   width: 100%; 

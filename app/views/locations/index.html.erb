@@ -1,0 +1,32 @@
+<p id="notice">
+<div class="page-header">
+  <h1>My Locations</h1>
+</div>
+<% if @locations.any? %>
+  <table class="table table-striped">
+    <thead>
+      <th>Name</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th colspan="2">Actions</th>
+    </thead>
+    <%= will_paginate @locations, renderer: BootstrapPagination::Rails %>
+      <% @locations.each do |location| %>
+        <tr>
+          <td><%= link_to location.location_name, location %></td>
+          <td class="align-right"><%= location.latitude.round(7) %></td>
+          <td><%= location.longitude.round(7) %></td>
+          <td>
+            <%= link_to 'Edit', edit_location_path(location) %>
+          </td>
+          <td>
+            <%= link_to 'Delete', location_path(location), :method => :delete, :confirm => 'Are you sure?', :class => 'text-danger' %>
+          </td>
+        </tr>
+      <% end %>
+  </table>
+<% else %>
+  <p>You haven't created any locations yet. Click "Add a location" to get started.</p>
+<% end %>
+<br>
+<%= link_to "Add a location", new_location_path, class: "btn btn-primary" %>

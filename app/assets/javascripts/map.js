@@ -1,4 +1,3 @@
-<script type="text/javascript">
 function moveISS () {
     $.getJSON('http://api.open-notify.org/iss-now.json?callback=?', function(data) {
         var lat = data['iss_position']['latitude'];
@@ -40,4 +39,3 @@ handler.buildMap({
   ]);
 });
 nite.init(map);
-</script>

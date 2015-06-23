@@ -16,6 +16,7 @@
 //= require map
 //= require map_style
 //= require underscore.js
+//= require gmaps/google
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
